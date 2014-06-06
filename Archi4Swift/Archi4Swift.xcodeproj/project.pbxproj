@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DBBB64781941D81900579464 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB64771941D81900579464 /* OperationQueue.swift */; };
+		DB0B8CB51941DE3800341573 /* HttpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB21941DE3800341573 /* HttpOperation.swift */; };
+		DB0B8CB61941DE3800341573 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB31941DE3800341573 /* Operation.swift */; };
+		DB0B8CB71941DE3800341573 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB41941DE3800341573 /* OperationQueue.swift */; };
 		DBBB647A1941D83D00579464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB64791941D83D00579464 /* AppDelegate.swift */; };
-		DBBB647C1941D88200579464 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB647B1941D88200579464 /* Operation.swift */; };
-		DBBB647E1941D88A00579464 /* HttpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB647D1941D88A00579464 /* HttpOperation.swift */; };
 		DBCBA7E91941C5A000A2C630 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCBA7E81941C5A000A2C630 /* Images.xcassets */; };
 		DBCBA7F51941C5A000A2C630 /* Archi4SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7F41941C5A000A2C630 /* Archi4SwiftTests.swift */; };
 		DBCBA8191941C67500A2C630 /* ParamArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7FF1941C67500A2C630 /* ParamArgs.swift */; };
@@ -43,10 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DBBB64771941D81900579464 /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		DB0B8CB21941DE3800341573 /* HttpOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpOperation.swift; sourceTree = "<group>"; };
+		DB0B8CB31941DE3800341573 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		DB0B8CB41941DE3800341573 /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		DBBB64791941D83D00579464 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DBBB647B1941D88200579464 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
-		DBBB647D1941D88A00579464 /* HttpOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpOperation.swift; sourceTree = "<group>"; };
 		DBCBA7E11941C5A000A2C630 /* Archi4Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Archi4Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCBA7E51941C5A000A2C630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBCBA7E81941C5A000A2C630 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -90,6 +90,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB0B8CAB1941DE1000341573 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				DB0B8CB21941DE3800341573 /* HttpOperation.swift */,
+				DB0B8CB31941DE3800341573 /* Operation.swift */,
+				DB0B8CB41941DE3800341573 /* OperationQueue.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
 		DBCBA7D81941C5A000A2C630 = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +128,7 @@
 				DBCBA7FE1941C67500A2C630 /* Args */,
 				DBCBA80C1941C67500A2C630 /* Parsers */,
 				DBCBA8031941C67500A2C630 /* Engine */,
-				DBCBA82D1941CBA400A2C630 /* Queue */,
+				DB0B8CAB1941DE1000341573 /* Queue */,
 				DBCBA7E81941C5A000A2C630 /* Images.xcassets */,
 				DBCBA7E41941C5A000A2C630 /* Supporting Files */,
 			);
@@ -207,16 +217,6 @@
 				DBCBA8181941C67500A2C630 /* SuggViewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		DBCBA82D1941CBA400A2C630 /* Queue */ = {
-			isa = PBXGroup;
-			children = (
-				DBBB64771941D81900579464 /* OperationQueue.swift */,
-				DBBB647B1941D88200579464 /* Operation.swift */,
-				DBBB647D1941D88A00579464 /* HttpOperation.swift */,
-			);
-			path = Queue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,14 +319,15 @@
 				DBCBA8281941C67500A2C630 /* RootTabViewController.swift in Sources */,
 				DBCBA81E1941C67500A2C630 /* WeatherInfo.swift in Sources */,
 				DBCBA8291941C67500A2C630 /* RootViewController.swift in Sources */,
-				DBBB647C1941D88200579464 /* Operation.swift in Sources */,
+				DB0B8CB61941DE3800341573 /* Operation.swift in Sources */,
 				DBCBA81A1941C67500A2C630 /* WeatherParamArgs.swift in Sources */,
 				DBCBA8191941C67500A2C630 /* ParamArgs.swift in Sources */,
 				DBCBA81C1941C67500A2C630 /* HttpEngine.swift in Sources */,
+				DB0B8CB71941DE3800341573 /* OperationQueue.swift in Sources */,
 				DBCBA8241941C67500A2C630 /* FavViewController.swift in Sources */,
+				DB0B8CB51941DE3800341573 /* HttpOperation.swift in Sources */,
 				DBCBA8271941C67500A2C630 /* MoreViewController.swift in Sources */,
 				DBBB647A1941D83D00579464 /* AppDelegate.swift in Sources */,
-				DBBB64781941D81900579464 /* OperationQueue.swift in Sources */,
 				DBCBA8261941C67500A2C630 /* HomeViewController.swift in Sources */,
 				DBCBA81D1941C67500A2C630 /* SuperDataService.swift in Sources */,
 				DBCBA8231941C67500A2C630 /* BaseViewController.swift in Sources */,
@@ -336,7 +337,6 @@
 				DBCBA8251941C67500A2C630 /* HomeDetailViewController.swift in Sources */,
 				DBCBA82A1941C67500A2C630 /* SuggViewController.swift in Sources */,
 				DBCBA8211941C67500A2C630 /* WeatherParser.swift in Sources */,
-				DBBB647E1941D88A00579464 /* HttpOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
