@@ -10,6 +10,23 @@
 		DBCBA7E71941C5A000A2C630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7E61941C5A000A2C630 /* AppDelegate.swift */; };
 		DBCBA7E91941C5A000A2C630 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCBA7E81941C5A000A2C630 /* Images.xcassets */; };
 		DBCBA7F51941C5A000A2C630 /* Archi4SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7F41941C5A000A2C630 /* Archi4SwiftTests.swift */; };
+		DBCBA8191941C67500A2C630 /* ParamArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7FF1941C67500A2C630 /* ParamArgs.swift */; };
+		DBCBA81A1941C67500A2C630 /* WeatherParamArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8001941C67500A2C630 /* WeatherParamArgs.swift */; };
+		DBCBA81B1941C67500A2C630 /* SimpleTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8021941C67500A2C630 /* SimpleTextCell.swift */; };
+		DBCBA81C1941C67500A2C630 /* HttpEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8041941C67500A2C630 /* HttpEngine.swift */; };
+		DBCBA81D1941C67500A2C630 /* SuperDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8051941C67500A2C630 /* SuperDataService.swift */; };
+		DBCBA81E1941C67500A2C630 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8071941C67500A2C630 /* WeatherInfo.swift */; };
+		DBCBA8201941C67500A2C630 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA80D1941C67500A2C630 /* Parser.swift */; };
+		DBCBA8211941C67500A2C630 /* WeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA80E1941C67500A2C630 /* WeatherParser.swift */; };
+		DBCBA8221941C67500A2C630 /* BaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8101941C67500A2C630 /* BaseNavController.swift */; };
+		DBCBA8231941C67500A2C630 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8111941C67500A2C630 /* BaseViewController.swift */; };
+		DBCBA8241941C67500A2C630 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8121941C67500A2C630 /* FavViewController.swift */; };
+		DBCBA8251941C67500A2C630 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8131941C67500A2C630 /* HomeDetailViewController.swift */; };
+		DBCBA8261941C67500A2C630 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8141941C67500A2C630 /* HomeViewController.swift */; };
+		DBCBA8271941C67500A2C630 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8151941C67500A2C630 /* MoreViewController.swift */; };
+		DBCBA8281941C67500A2C630 /* RootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8161941C67500A2C630 /* RootTabViewController.swift */; };
+		DBCBA8291941C67500A2C630 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8171941C67500A2C630 /* RootViewController.swift */; };
+		DBCBA82A1941C67500A2C630 /* SuggViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA8181941C67500A2C630 /* SuggViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +47,23 @@
 		DBCBA7EE1941C5A000A2C630 /* Archi4SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Archi4SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCBA7F31941C5A000A2C630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBCBA7F41941C5A000A2C630 /* Archi4SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archi4SwiftTests.swift; sourceTree = "<group>"; };
+		DBCBA7FF1941C67500A2C630 /* ParamArgs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamArgs.swift; sourceTree = "<group>"; };
+		DBCBA8001941C67500A2C630 /* WeatherParamArgs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherParamArgs.swift; sourceTree = "<group>"; };
+		DBCBA8021941C67500A2C630 /* SimpleTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTextCell.swift; sourceTree = "<group>"; };
+		DBCBA8041941C67500A2C630 /* HttpEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpEngine.swift; sourceTree = "<group>"; };
+		DBCBA8051941C67500A2C630 /* SuperDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperDataService.swift; sourceTree = "<group>"; };
+		DBCBA8071941C67500A2C630 /* WeatherInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		DBCBA80D1941C67500A2C630 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		DBCBA80E1941C67500A2C630 /* WeatherParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherParser.swift; sourceTree = "<group>"; };
+		DBCBA8101941C67500A2C630 /* BaseNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavController.swift; sourceTree = "<group>"; };
+		DBCBA8111941C67500A2C630 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DBCBA8121941C67500A2C630 /* FavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
+		DBCBA8131941C67500A2C630 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		DBCBA8141941C67500A2C630 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DBCBA8151941C67500A2C630 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		DBCBA8161941C67500A2C630 /* RootTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabViewController.swift; sourceTree = "<group>"; };
+		DBCBA8171941C67500A2C630 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		DBCBA8181941C67500A2C630 /* SuggViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				DBCBA7E61941C5A000A2C630 /* AppDelegate.swift */,
+				DBCBA80F1941C67500A2C630 /* ViewControllers */,
+				DBCBA8011941C67500A2C630 /* Cells */,
+				DBCBA8061941C67500A2C630 /* Models */,
+				DBCBA7FE1941C67500A2C630 /* Args */,
+				DBCBA80C1941C67500A2C630 /* Parsers */,
+				DBCBA8031941C67500A2C630 /* Engine */,
 				DBCBA7E81941C5A000A2C630 /* Images.xcassets */,
 				DBCBA7E41941C5A000A2C630 /* Supporting Files */,
 			);
@@ -101,6 +141,65 @@
 				DBCBA7F31941C5A000A2C630 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DBCBA7FE1941C67500A2C630 /* Args */ = {
+			isa = PBXGroup;
+			children = (
+				DBCBA7FF1941C67500A2C630 /* ParamArgs.swift */,
+				DBCBA8001941C67500A2C630 /* WeatherParamArgs.swift */,
+			);
+			path = Args;
+			sourceTree = "<group>";
+		};
+		DBCBA8011941C67500A2C630 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DBCBA8021941C67500A2C630 /* SimpleTextCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DBCBA8031941C67500A2C630 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				DBCBA8041941C67500A2C630 /* HttpEngine.swift */,
+				DBCBA8051941C67500A2C630 /* SuperDataService.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		DBCBA8061941C67500A2C630 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DBCBA8071941C67500A2C630 /* WeatherInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DBCBA80C1941C67500A2C630 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				DBCBA80D1941C67500A2C630 /* Parser.swift */,
+				DBCBA80E1941C67500A2C630 /* WeatherParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		DBCBA80F1941C67500A2C630 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DBCBA8101941C67500A2C630 /* BaseNavController.swift */,
+				DBCBA8111941C67500A2C630 /* BaseViewController.swift */,
+				DBCBA8121941C67500A2C630 /* FavViewController.swift */,
+				DBCBA8131941C67500A2C630 /* HomeDetailViewController.swift */,
+				DBCBA8141941C67500A2C630 /* HomeViewController.swift */,
+				DBCBA8151941C67500A2C630 /* MoreViewController.swift */,
+				DBCBA8161941C67500A2C630 /* RootTabViewController.swift */,
+				DBCBA8171941C67500A2C630 /* RootViewController.swift */,
+				DBCBA8181941C67500A2C630 /* SuggViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +299,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCBA8281941C67500A2C630 /* RootTabViewController.swift in Sources */,
+				DBCBA81E1941C67500A2C630 /* WeatherInfo.swift in Sources */,
+				DBCBA8291941C67500A2C630 /* RootViewController.swift in Sources */,
+				DBCBA81A1941C67500A2C630 /* WeatherParamArgs.swift in Sources */,
+				DBCBA8191941C67500A2C630 /* ParamArgs.swift in Sources */,
+				DBCBA81C1941C67500A2C630 /* HttpEngine.swift in Sources */,
+				DBCBA8241941C67500A2C630 /* FavViewController.swift in Sources */,
+				DBCBA8271941C67500A2C630 /* MoreViewController.swift in Sources */,
+				DBCBA8261941C67500A2C630 /* HomeViewController.swift in Sources */,
+				DBCBA81D1941C67500A2C630 /* SuperDataService.swift in Sources */,
+				DBCBA8231941C67500A2C630 /* BaseViewController.swift in Sources */,
+				DBCBA8201941C67500A2C630 /* Parser.swift in Sources */,
+				DBCBA81B1941C67500A2C630 /* SimpleTextCell.swift in Sources */,
+				DBCBA8221941C67500A2C630 /* BaseNavController.swift in Sources */,
 				DBCBA7E71941C5A000A2C630 /* AppDelegate.swift in Sources */,
+				DBCBA8251941C67500A2C630 /* HomeDetailViewController.swift in Sources */,
+				DBCBA82A1941C67500A2C630 /* SuggViewController.swift in Sources */,
+				DBCBA8211941C67500A2C630 /* WeatherParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
