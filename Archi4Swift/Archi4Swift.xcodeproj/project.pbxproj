@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DBCBA7E71941C5A000A2C630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7E61941C5A000A2C630 /* AppDelegate.swift */; };
+		DBBB64781941D81900579464 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB64771941D81900579464 /* OperationQueue.swift */; };
+		DBBB647A1941D83D00579464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB64791941D83D00579464 /* AppDelegate.swift */; };
+		DBBB647C1941D88200579464 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB647B1941D88200579464 /* Operation.swift */; };
+		DBBB647E1941D88A00579464 /* HttpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB647D1941D88A00579464 /* HttpOperation.swift */; };
 		DBCBA7E91941C5A000A2C630 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCBA7E81941C5A000A2C630 /* Images.xcassets */; };
 		DBCBA7F51941C5A000A2C630 /* Archi4SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7F41941C5A000A2C630 /* Archi4SwiftTests.swift */; };
 		DBCBA8191941C67500A2C630 /* ParamArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7FF1941C67500A2C630 /* ParamArgs.swift */; };
@@ -40,9 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DBBB64771941D81900579464 /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		DBBB64791941D83D00579464 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DBBB647B1941D88200579464 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		DBBB647D1941D88A00579464 /* HttpOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpOperation.swift; sourceTree = "<group>"; };
 		DBCBA7E11941C5A000A2C630 /* Archi4Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Archi4Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCBA7E51941C5A000A2C630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBCBA7E61941C5A000A2C630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBCBA7E81941C5A000A2C630 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DBCBA7EE1941C5A000A2C630 /* Archi4SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Archi4SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCBA7F31941C5A000A2C630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,13 +111,14 @@
 		DBCBA7E31941C5A000A2C630 /* Archi4Swift */ = {
 			isa = PBXGroup;
 			children = (
-				DBCBA7E61941C5A000A2C630 /* AppDelegate.swift */,
+				DBBB64791941D83D00579464 /* AppDelegate.swift */,
 				DBCBA80F1941C67500A2C630 /* ViewControllers */,
 				DBCBA8011941C67500A2C630 /* Cells */,
 				DBCBA8061941C67500A2C630 /* Models */,
 				DBCBA7FE1941C67500A2C630 /* Args */,
 				DBCBA80C1941C67500A2C630 /* Parsers */,
 				DBCBA8031941C67500A2C630 /* Engine */,
+				DBCBA82D1941CBA400A2C630 /* Queue */,
 				DBCBA7E81941C5A000A2C630 /* Images.xcassets */,
 				DBCBA7E41941C5A000A2C630 /* Supporting Files */,
 			);
@@ -200,6 +207,16 @@
 				DBCBA8181941C67500A2C630 /* SuggViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DBCBA82D1941CBA400A2C630 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				DBBB64771941D81900579464 /* OperationQueue.swift */,
+				DBBB647B1941D88200579464 /* Operation.swift */,
+				DBBB647D1941D88A00579464 /* HttpOperation.swift */,
+			);
+			path = Queue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,21 +319,24 @@
 				DBCBA8281941C67500A2C630 /* RootTabViewController.swift in Sources */,
 				DBCBA81E1941C67500A2C630 /* WeatherInfo.swift in Sources */,
 				DBCBA8291941C67500A2C630 /* RootViewController.swift in Sources */,
+				DBBB647C1941D88200579464 /* Operation.swift in Sources */,
 				DBCBA81A1941C67500A2C630 /* WeatherParamArgs.swift in Sources */,
 				DBCBA8191941C67500A2C630 /* ParamArgs.swift in Sources */,
 				DBCBA81C1941C67500A2C630 /* HttpEngine.swift in Sources */,
 				DBCBA8241941C67500A2C630 /* FavViewController.swift in Sources */,
 				DBCBA8271941C67500A2C630 /* MoreViewController.swift in Sources */,
+				DBBB647A1941D83D00579464 /* AppDelegate.swift in Sources */,
+				DBBB64781941D81900579464 /* OperationQueue.swift in Sources */,
 				DBCBA8261941C67500A2C630 /* HomeViewController.swift in Sources */,
 				DBCBA81D1941C67500A2C630 /* SuperDataService.swift in Sources */,
 				DBCBA8231941C67500A2C630 /* BaseViewController.swift in Sources */,
 				DBCBA8201941C67500A2C630 /* Parser.swift in Sources */,
 				DBCBA81B1941C67500A2C630 /* SimpleTextCell.swift in Sources */,
 				DBCBA8221941C67500A2C630 /* BaseNavController.swift in Sources */,
-				DBCBA7E71941C5A000A2C630 /* AppDelegate.swift in Sources */,
 				DBCBA8251941C67500A2C630 /* HomeDetailViewController.swift in Sources */,
 				DBCBA82A1941C67500A2C630 /* SuggViewController.swift in Sources */,
 				DBCBA8211941C67500A2C630 /* WeatherParser.swift in Sources */,
+				DBBB647E1941D88A00579464 /* HttpOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +513,7 @@
 				DBCBA7FA1941C5A000A2C630 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBCBA7FB1941C5A000A2C630 /* Build configuration list for PBXNativeTarget "Archi4SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +522,7 @@
 				DBCBA7FD1941C5A000A2C630 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
