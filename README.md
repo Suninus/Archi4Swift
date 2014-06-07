@@ -10,11 +10,11 @@ The architecture has many modules in future,but now it only has the HttpEngine a
 Super clear function name to package the NSURLConnection class. To send http request, such as:
 
 ```swift
-HttpEngine(url:"http://example.json")
-	.fly(.POST,headerArgs: ["key":"value"],bodyArgs: ["key":"value"])
-	.completed { success, error, result in 
-		//Your process result code.
-	}
+HttpEngine("http://example.json")
+    .fly(.POST, ["key":"value"], ["key":"value"])
+    .completed { success, error, result in
+        //Your process result code.
+}
 ```
 
 Yeah,it's so simple.

@@ -59,7 +59,7 @@ class SuperDataService
         var verifyResult = self.verifyParams() //verifyParams
         if verifyResult.canFly {
             
-            HttpEngine(url:verifyResult.url!).fly(.GET,headerArgs: headers,bodyArgs: bodys).completed{ success ,error, result in
+            HttpEngine(verifyResult.url!).fly(.GET,headers,bodys).completed{ success ,error, result in
                 
                 if(success) {
                     

@@ -23,11 +23,11 @@ class HttpEngine : NSObject,NSURLConnectionDataDelegate
     var completedClosure:(Bool,NSError?,AnyObject?) -> () = { _, _, _ in }
     
     //method
-    init(var url:NSString) {
+    init(_ url:NSString) {
         self.request = NSMutableURLRequest(URL:NSURL(string:url),cachePolicy:.UseProtocolCachePolicy,timeoutInterval: 10)
     }
     
-    func fly(method: HttpMethod, headerArgs: Dictionary<String,String>, bodyArgs: Dictionary<String,String>) -> HttpEngine!{
+    func fly(method: HttpMethod, _ headerArgs: Dictionary<String,String>, _ bodyArgs: Dictionary<String,String>) -> HttpEngine!{
         
         //method
         switch method {

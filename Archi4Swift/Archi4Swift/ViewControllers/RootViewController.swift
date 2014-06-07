@@ -26,9 +26,11 @@ class RootViewController : UIViewController
 //        self.view.addSubview(wx)
 //        wx.loadRequest(NSURLRequest(URL:NSURL(string:"http://www.baidu.com")))
         
-        HttpEngine(url:"http://example.json").fly(.POST,headerArgs: ["key":"value"],bodyArgs: ["key":"value"]).completed({(success:Bool,error:NSError?,result:AnyObject?) -> () in
-            
-        })
+        HttpEngine("http://example.json")
+            .fly(.POST, ["key":"value"], ["key":"value"])
+            .completed { success, error, result in
+                //Your process result code.
+        }
 
     }
     
