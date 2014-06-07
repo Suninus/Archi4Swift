@@ -13,6 +13,7 @@
 		DBBB647A1941D83D00579464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB64791941D83D00579464 /* AppDelegate.swift */; };
 		DBC58DB11942A78D009D970E /* ErrorSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC58DB01942A78D009D970E /* ErrorSystemManager.swift */; };
 		DBC58DB31942A7F9009D970E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC58DB21942A7F9009D970E /* Error.swift */; };
+		DBC58DB61942C7D2009D970E /* INotifyPropertyChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC58DB51942C7D2009D970E /* INotifyPropertyChanged.swift */; };
 		DBCBA7E91941C5A000A2C630 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCBA7E81941C5A000A2C630 /* Images.xcassets */; };
 		DBCBA7F51941C5A000A2C630 /* Archi4SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7F41941C5A000A2C630 /* Archi4SwiftTests.swift */; };
 		DBCBA8191941C67500A2C630 /* ParamArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7FF1941C67500A2C630 /* ParamArgs.swift */; };
@@ -52,6 +53,9 @@
 		DBBB64791941D83D00579464 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBC58DB01942A78D009D970E /* ErrorSystemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSystemManager.swift; sourceTree = "<group>"; };
 		DBC58DB21942A7F9009D970E /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		DBC58DB51942C7D2009D970E /* INotifyPropertyChanged.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INotifyPropertyChanged.swift; sourceTree = "<group>"; };
+		DBC58DB71942C800009D970E /* Rx.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Rx.playground; sourceTree = "<group>"; };
+		DBC58DB81942DB35009D970E /* properties.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = properties.playground; sourceTree = "<group>"; };
 		DBCBA7E11941C5A000A2C630 /* Archi4Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Archi4Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCBA7E51941C5A000A2C630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBCBA7E81941C5A000A2C630 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -114,6 +118,14 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		DBC58DB41942C7B3009D970E /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				DBC58DB51942C7D2009D970E /* INotifyPropertyChanged.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
 		DBCBA7D81941C5A000A2C630 = {
 			isa = PBXGroup;
 			children = (
@@ -137,8 +149,11 @@
 			children = (
 				DBBB64791941D83D00579464 /* AppDelegate.swift */,
 				DB02F6711942A136002B8E5A /* test.playground */,
+				DBC58DB71942C800009D970E /* Rx.playground */,
+				DBC58DB81942DB35009D970E /* properties.playground */,
 				DBCBA80F1941C67500A2C630 /* ViewControllers */,
 				DBCBA8011941C67500A2C630 /* Cells */,
+				DBC58DB41942C7B3009D970E /* Rx */,
 				DBCBA8061941C67500A2C630 /* Models */,
 				DBCBA7FE1941C67500A2C630 /* Args */,
 				DBCBA80C1941C67500A2C630 /* Parsers */,
@@ -348,6 +363,7 @@
 				DBBB647A1941D83D00579464 /* AppDelegate.swift in Sources */,
 				DBCBA8261941C67500A2C630 /* HomeViewController.swift in Sources */,
 				DBCBA81D1941C67500A2C630 /* SuperDataService.swift in Sources */,
+				DBC58DB61942C7D2009D970E /* INotifyPropertyChanged.swift in Sources */,
 				DBCBA8231941C67500A2C630 /* BaseViewController.swift in Sources */,
 				DBCBA8201941C67500A2C630 /* Parser.swift in Sources */,
 				DBCBA81B1941C67500A2C630 /* SimpleTextCell.swift in Sources */,

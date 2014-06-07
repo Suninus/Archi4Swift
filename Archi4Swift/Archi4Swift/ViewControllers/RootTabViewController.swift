@@ -22,6 +22,10 @@ class RootTabViewController : UITabBarController
         self.tabBar.hidden = true
     }
     
+    convenience init() {
+        self.init(nibName:nil,bundle:nil)
+    }
+    
     override func viewDidLoad() {
         self.createTabs()
         self.createTabViewContrller()

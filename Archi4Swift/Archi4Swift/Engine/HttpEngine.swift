@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum HttpMethod {
-    case POST
-    case GET
+enum HttpMethod : String {
+    case POST = "POST"
+    case GET = "GET"
 }
 
 class HttpEngine : NSObject,NSURLConnectionDataDelegate
@@ -27,7 +27,7 @@ class HttpEngine : NSObject,NSURLConnectionDataDelegate
         self.request = NSMutableURLRequest(URL:NSURL(string:url),cachePolicy:.UseProtocolCachePolicy,timeoutInterval: 10)
     }
     
-    func fly(method:HttpMethod,headerArgs:Dictionary<String,String>,bodyArgs:Dictionary<String,String>) -> HttpEngine!{
+    func fly(method: HttpMethod, headerArgs: Dictionary<String,String>, bodyArgs: Dictionary<String,String>) -> HttpEngine!{
         
         //method
         switch method {

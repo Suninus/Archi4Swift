@@ -17,11 +17,13 @@ import Foundation
 
 class SuperDataService
 {
+    //properties
     var reqUrl:String? = nil
     var parser:Parser? = nil
     var headers:Dictionary<String,String> = Dictionary<String,String>()
     var bodys:Dictionary<String,String> = Dictionary<String,String>()
     
+    //init
     init() {
         
     }
@@ -57,7 +59,7 @@ class SuperDataService
         var verifyResult = self.verifyParams() //verifyParams
         if verifyResult.canFly {
             
-            HttpEngine(url:verifyResult.url!).fly(.GET,headerArgs: headers,bodyArgs: bodys).completed({(success:Bool,error:NSError?,result:AnyObject?) -> () in
+            HttpEngine(url:verifyResult.url!).fly(.GET,headerArgs: headers,bodyArgs: bodys).completed({ success ,error, result in
                 
                 if(success) {
                     
@@ -87,13 +89,11 @@ class SuperDataService
     }
     
     func verifyParams() -> (canFly:Bool,url:NSString?,parser:Parser?) {
-        
-        if self.reqUrl != nil && self.parser != nil {
+        if (self.reqUrl && self.parser) {
             return (true,self.reqUrl!,self.parser!)
         } else {
             return (false,nil,nil)
         }
-        
     }
 }
 

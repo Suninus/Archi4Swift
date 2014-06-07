@@ -31,3 +31,12 @@ args2.url
 let a = 123,b = 456
 a
 b
+
+class test {
+    
+    var str:String? = nil
+    
+    init() {
+        
+    }
+}
