@@ -10,9 +10,11 @@ The architecture has many modules in future,but now it only has the HttpEngine a
 Super clear function name to package the NSURLConnection class. To send http request, such as:
 
 ```swift
-HttpEngine(url:"http://example.json").fly(.POST,headerArgs: ["key":"value"],bodyArgs: ["key":"value"]).completed({(success:Bool,error:NSError?,result:AnyObject?) -> () in 
-	//Your process result code.
-})
+HttpEngine(url:"http://example.json")
+	.fly(.POST,headerArgs: ["key":"value"],bodyArgs: ["key":"value"])
+	.completed({ success, error, result in 
+		//Your process result code.
+	})
 ```
 
 Yeah,it's so simple.
@@ -25,15 +27,19 @@ you could't care the how the way of get data from server.  ...... it's simple,su
 
 ```swift
 var args = WeatherParamArgs(cityId:cityId)
-var parser = WeatherParser()        
-SuperDataService().fetch(args).nextParse(parser).done({ (success:Bool,error:NSError?,result:AnyObject?) in
-    if(success) {
-        var info:WeatherInfo = result as WeatherInfo
-        println("weatherinfo city---- \(info.city!) --- week --- \(info.week)")
-    } else {
-        println("error city id : \(cityId)")
-    }
-})
+var parser = WeatherParser()   
+
+SuperDataService()
+	.fetch(args)
+	.nextParse(parser)
+	.done({ success, error, result in
+    	if(success) {
+        	var info:WeatherInfo = result as WeatherInfo
+        	println("weatherinfo city---- \(info.city!) --- week --- \(info.week)")
+    	} else {
+        	println("error city id : \(cityId)")
+    	}
+	})
 ```
 
 ## Contributing
