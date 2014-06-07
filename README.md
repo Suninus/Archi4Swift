@@ -19,7 +19,7 @@ HttpEngine(url:"http://example.json")
 
 Yeah,it's so simple.
 
-## SuperDataSerice
+## SuperDataService
 
 It's a business layer service for the ViewController which need the data from the server, it also call the http engine to get data,so why call it super ?
 Because it supply the single line fetch data way. In this way, the architeture is pure, the next you will develop only the request args and result parser,
