@@ -25,6 +25,11 @@ class RootViewController : UIViewController
 //        var wx:UIWebView = UIWebView(frame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height))
 //        self.view.addSubview(wx)
 //        wx.loadRequest(NSURLRequest(URL:NSURL(string:"http://www.baidu.com")))
+        
+        HttpEngine(url:"http://example.json").fly(.POST,headerArgs: ["key":"value"],bodyArgs: ["key":"value"]).completed({(success:Bool,error:NSError?,result:AnyObject?) -> () in
+            
+        })
+
     }
     
     class func sayHello() {
