@@ -13,14 +13,16 @@ class WeatherParser : Parser
     
     override func parseJsonData(jsonData: AnyObject!) -> AnyObject? {
         
-        var dic:NSDictionary = jsonData as NSDictionary
-        var weatherInfoDic:NSDictionary = dic.objectForKey("weatherinfo") as NSDictionary
-        
-        var weatherInfo:WeatherInfo = WeatherInfo()
-        weatherInfo.city = weatherInfoDic.objectForKey("city") as String
-        weatherInfo.week = weatherInfoDic.objectForKey("week") as String
-        weatherInfo.weather = weatherInfoDic.objectForKey("weather1") as String
-        
-        return weatherInfo
+        if let dic = jsonData as? NSDictionary {
+            
+            var weatherInfo = WeatherInfo()
+            weatherInfo.city = dic["weatherinfo"]?["city"]? as String
+            weatherInfo.week = dic["weatherinfo"]?["week"]? as String
+            weatherInfo.weather = dic["weatherinfo"]?["weather1"]? as String
+            
+            return weatherInfo
+        }
+
+        return nil
     }
 }

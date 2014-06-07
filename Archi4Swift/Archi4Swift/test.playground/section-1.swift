@@ -40,3 +40,16 @@ class test {
         
     }
 }
+
+
+var string = ""
+
+for i in 1...10 {
+    string += "\(i)"
+}
+
+string
+
+for i in 1...100 {
+    var j = i % 4
+}
