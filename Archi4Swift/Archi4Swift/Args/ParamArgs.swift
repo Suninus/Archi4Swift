@@ -10,18 +10,7 @@ import Foundation
 
 class ParamArgs
 {
-    var url:String!
-    var headers:Dictionary<String,String>!
-    var bodys:Dictionary<String,String>!
-    
-    init() {
-        self.setArgs()
-    }
-    
-    func setArgs() {
-        self.url = String()
-        self.headers = Dictionary<String,String>()
-        self.bodys = Dictionary<String,String>()
-    }
-    
+    var url: String? { return nil }
+    var headers: Dictionary<String,String>? { return nil }
+    var bodys: Dictionary<String,String>? { return nil }
 }

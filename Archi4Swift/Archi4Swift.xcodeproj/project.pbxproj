@@ -11,6 +11,8 @@
 		DB0B8CB61941DE3800341573 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB31941DE3800341573 /* Operation.swift */; };
 		DB0B8CB71941DE3800341573 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB41941DE3800341573 /* OperationQueue.swift */; };
 		DBBB647A1941D83D00579464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB64791941D83D00579464 /* AppDelegate.swift */; };
+		DBC58DB11942A78D009D970E /* ErrorSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC58DB01942A78D009D970E /* ErrorSystemManager.swift */; };
+		DBC58DB31942A7F9009D970E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC58DB21942A7F9009D970E /* Error.swift */; };
 		DBCBA7E91941C5A000A2C630 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCBA7E81941C5A000A2C630 /* Images.xcassets */; };
 		DBCBA7F51941C5A000A2C630 /* Archi4SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7F41941C5A000A2C630 /* Archi4SwiftTests.swift */; };
 		DBCBA8191941C67500A2C630 /* ParamArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBA7FF1941C67500A2C630 /* ParamArgs.swift */; };
@@ -43,10 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB02F6711942A136002B8E5A /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; };
 		DB0B8CB21941DE3800341573 /* HttpOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpOperation.swift; sourceTree = "<group>"; };
 		DB0B8CB31941DE3800341573 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		DB0B8CB41941DE3800341573 /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		DBBB64791941D83D00579464 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DBC58DB01942A78D009D970E /* ErrorSystemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSystemManager.swift; sourceTree = "<group>"; };
+		DBC58DB21942A7F9009D970E /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		DBCBA7E11941C5A000A2C630 /* Archi4Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Archi4Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCBA7E51941C5A000A2C630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBCBA7E81941C5A000A2C630 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -100,6 +105,15 @@
 			path = Queue;
 			sourceTree = "<group>";
 		};
+		DBC58DAF1942A77C009D970E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				DBC58DB01942A78D009D970E /* ErrorSystemManager.swift */,
+				DBC58DB21942A7F9009D970E /* Error.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		DBCBA7D81941C5A000A2C630 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				DBBB64791941D83D00579464 /* AppDelegate.swift */,
+				DB02F6711942A136002B8E5A /* test.playground */,
 				DBCBA80F1941C67500A2C630 /* ViewControllers */,
 				DBCBA8011941C67500A2C630 /* Cells */,
 				DBCBA8061941C67500A2C630 /* Models */,
@@ -129,6 +144,7 @@
 				DBCBA80C1941C67500A2C630 /* Parsers */,
 				DBCBA8031941C67500A2C630 /* Engine */,
 				DB0B8CAB1941DE1000341573 /* Queue */,
+				DBC58DAF1942A77C009D970E /* Tools */,
 				DBCBA7E81941C5A000A2C630 /* Images.xcassets */,
 				DBCBA7E41941C5A000A2C630 /* Supporting Files */,
 			);
@@ -318,9 +334,11 @@
 			files = (
 				DBCBA8281941C67500A2C630 /* RootTabViewController.swift in Sources */,
 				DBCBA81E1941C67500A2C630 /* WeatherInfo.swift in Sources */,
+				DBC58DB31942A7F9009D970E /* Error.swift in Sources */,
 				DBCBA8291941C67500A2C630 /* RootViewController.swift in Sources */,
 				DB0B8CB61941DE3800341573 /* Operation.swift in Sources */,
 				DBCBA81A1941C67500A2C630 /* WeatherParamArgs.swift in Sources */,
+				DBC58DB11942A78D009D970E /* ErrorSystemManager.swift in Sources */,
 				DBCBA8191941C67500A2C630 /* ParamArgs.swift in Sources */,
 				DBCBA81C1941C67500A2C630 /* HttpEngine.swift in Sources */,
 				DB0B8CB71941DE3800341573 /* OperationQueue.swift in Sources */,

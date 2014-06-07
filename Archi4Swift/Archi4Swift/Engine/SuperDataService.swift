@@ -17,10 +17,10 @@ import Foundation
 
 class SuperDataService
 {
-    var reqUrl:String!
+    var reqUrl:String? = nil
+    var parser:Parser? = nil
     var headers:Dictionary<String,String> = Dictionary<String,String>()
     var bodys:Dictionary<String,String> = Dictionary<String,String>()
-    var parser:Parser!
     
     init() {
         
@@ -29,10 +29,16 @@ class SuperDataService
     //fetch
     func fetch(args:ParamArgs) -> SuperDataService! {
     
-        reqUrl = args.url
-        self.headers = args.headers
-        self.bodys = args.bodys
+        self.reqUrl = args.url
+        
+        if let tempHeaders = args.headers {
+            self.headers = tempHeaders
+        }
 
+        if let tempBodys = args.bodys {
+            self.bodys = tempBodys
+        }
+        
         return self
     }
     
@@ -48,15 +54,27 @@ class SuperDataService
         headers += self.getCommonHeaders()
         bodys += self.getCommonBodys()
         
-        HttpEngine(url:reqUrl).fly(.GET,headerArgs: headers,bodyArgs: bodys).completed({(success:Bool,error:NSError?,result:AnyObject?) -> () in
-            if(success) {
-                var parseResult:AnyObject? = self.parser.parseJsonData(result) //这个地方需要处理解析错误的情况
-                doneClosure(true,nil,parseResult)
+        var verifyResult = self.verifyParams() //verifyParams
+        if verifyResult.canFly {
+            
+            HttpEngine(url:verifyResult.url!).fly(.GET,headerArgs: headers,bodyArgs: bodys).completed({(success:Bool,error:NSError?,result:AnyObject?) -> () in
                 
-            } else {
-                doneClosure(false,error,nil)
-            }
-        })
+                if(success) {
+                    
+                    var parseResult:AnyObject? = verifyResult.parser!.parseJsonData(result) //TODO::when parse error to deal
+                    doneClosure(true,nil,parseResult)
+                    
+                } else {
+                    doneClosure(false,error,nil)
+                    
+                }
+            })
+        } else {
+            
+            var error = NSError(domain: "parameter is error", code: -1000, userInfo:nil) //TODO::ErrorSystem
+            doneClosure(false,error,nil)
+            
+        }
     }
     
     //util
@@ -66,6 +84,16 @@ class SuperDataService
     
     func getCommonBodys() -> Dictionary<String,String> {
         return Dictionary<String,String>()
+    }
+    
+    func verifyParams() -> (canFly:Bool,url:NSString?,parser:Parser?) {
+        
+        if self.reqUrl != nil && self.parser != nil {
+            return (true,self.reqUrl!,self.parser!)
+        } else {
+            return (false,nil,nil)
+        }
+        
     }
 }
 

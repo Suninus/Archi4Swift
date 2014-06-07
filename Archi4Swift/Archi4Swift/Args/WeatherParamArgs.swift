@@ -16,8 +16,5 @@ class WeatherParamArgs : ParamArgs
         _cityId = cityId
     }
     
-    override func setArgs() {
-        super.setArgs()
-        self.url = "http://m.weather.com.cn/data/\(_cityId).html"
-    }
+    override var url:String! { get { return "http://m.weather.com.cn/data/\(_cityId).html" } }
 }

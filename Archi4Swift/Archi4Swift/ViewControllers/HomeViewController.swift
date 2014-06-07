@@ -67,8 +67,10 @@ class HomeViewController : BaseViewController,UITableViewDelegate,UITableViewDat
 
     //data
     func loadWeatherData(cityId:String) {
-        var args:WeatherParamArgs! = WeatherParamArgs(cityId:cityId)
-        var parser:WeatherParser! = WeatherParser()
+        
+        var args = WeatherParamArgs(cityId:cityId)
+        var parser = WeatherParser()
+        
         SuperDataService().fetch(args).nextParse(parser).done({(success:Bool,error:NSError?,result:AnyObject?) in
             
             if(success) {
