@@ -48,7 +48,8 @@ class HomeViewController : BaseViewController,UITableViewDelegate,UITableViewDat
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         
         let identifier:String! = "cellId"
-        var cell:SimpleTextCell! = tableView.dequeueReusableCellWithIdentifier(identifier) as SimpleTextCell!
+        
+        var cell:SimpleTextCell = tableView.dequeueReusableCellWithIdentifier(identifier) as SimpleTextCell
         if(cell == nil) {
             cell = SimpleTextCell(style:.Default,reuseIdentifier:identifier)
             cell.selectionStyle = .None

@@ -20,7 +20,7 @@ class HttpEngine : NSObject,NSURLConnectionDataDelegate
     var request:NSMutableURLRequest!
     var connection:NSURLConnection!
     var resultData:NSMutableData!
-    var completedClosure:(Bool,NSError?,AnyObject?) -> () = {(_,_,_) ->() in}
+    var completedClosure:(Bool,NSError?,AnyObject?) -> () = { _, _, _ in }
     
     //method
     init(var url:NSString) {
@@ -84,6 +84,7 @@ class HttpEngine : NSObject,NSURLConnectionDataDelegate
         } else {
             completedClosure(false,error,nil)
         }
+        
     }
     
     func connection(connection: NSURLConnection!, didFailWithError error: NSError!) {
