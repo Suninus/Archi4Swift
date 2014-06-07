@@ -71,7 +71,7 @@ class HomeViewController : BaseViewController,UITableViewDelegate,UITableViewDat
         var args = WeatherParamArgs(cityId:cityId)
         var parser = WeatherParser()
         
-        SuperDataService().fetch(args).nextParse(parser).done({ success, error, result in
+        SuperDataService().fetch(args).nextParse(parser).done{ success, error, result in
             
             if(success) {
                 var info:WeatherInfo = result as WeatherInfo
@@ -81,7 +81,7 @@ class HomeViewController : BaseViewController,UITableViewDelegate,UITableViewDat
             } else {
 //                println("error city id : \(cityId)")
             }
-        })
+        }
     }
 
     //controller

@@ -59,7 +59,7 @@ class SuperDataService
         var verifyResult = self.verifyParams() //verifyParams
         if verifyResult.canFly {
             
-            HttpEngine(url:verifyResult.url!).fly(.GET,headerArgs: headers,bodyArgs: bodys).completed({ success ,error, result in
+            HttpEngine(url:verifyResult.url!).fly(.GET,headerArgs: headers,bodyArgs: bodys).completed{ success ,error, result in
                 
                 if(success) {
                     
@@ -70,7 +70,7 @@ class SuperDataService
                     doneClosure(false,error,nil)
                     
                 }
-            })
+            }
         } else {
             
             var error = NSError(domain: "parameter is error", code: -1000, userInfo:nil) //TODO::ErrorSystem

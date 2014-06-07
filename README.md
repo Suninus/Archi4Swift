@@ -12,9 +12,9 @@ Super clear function name to package the NSURLConnection class. To send http req
 ```swift
 HttpEngine(url:"http://example.json")
 	.fly(.POST,headerArgs: ["key":"value"],bodyArgs: ["key":"value"])
-	.completed({ success, error, result in 
+	.completed { success, error, result in 
 		//Your process result code.
-	})
+	}
 ```
 
 Yeah,it's so simple.
@@ -32,14 +32,14 @@ var parser = WeatherParser()
 SuperDataService()
 	.fetch(args)
 	.nextParse(parser)
-	.done({ success, error, result in
+	.done { success, error, result in
     	if(success) {
         	var info:WeatherInfo = result as WeatherInfo
         	println("weatherinfo city---- \(info.city!) --- week --- \(info.week)")
     	} else {
         	println("error city id : \(cityId)")
     	}
-	})
+	}
 ```
 
 ## Contributing
