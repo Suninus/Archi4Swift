@@ -3,7 +3,6 @@ Archi4Swift
 
 A simple architecture of apple new develop language        ----------======[ !? Swift ?! ]======----------
 
-
 The architecture has many modules in future,but now it only has the HttpEngine and SuperDataSevice.
 
 ## HttpEngine
@@ -38,7 +37,8 @@ SuperDataService().fetch(args).nextParse(parser).done({ (success:Bool,error:NSEr
 ```
 
 ## Contributing
-I am happy to receive any pull requests, and you will say any suggestion of swift in here. let's do it!
+- I am happy to receive any pull requests, and you will say any suggestion of swift in here. let's do it!
+- Any issue is appreciated.
 
 ## Next
 - 1.complete the architecture to the swift grammar
@@ -46,5 +46,5 @@ I am happy to receive any pull requests, and you will say any suggestion of swif
 - 3.errorsystem
 - 4.write a project use this architecture
 
-License
+## License
 MIT
