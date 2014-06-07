@@ -8,7 +8,7 @@ The architecture has many modules in future,but now it only has the HttpEngine a
 
 ## HttpEngine
 
-Super clear fucntion name of package the NSURLConnection class. To send http request, such as:
+Super clear function name to package the NSURLConnection class. To send http request, such as:
 
 ```swift
 HttpEngine(url:"http://example.json").fly(.POST,headerArgs: ["key":"value"],bodyArgs: ["key":"value"]).completed({(success:Bool,error:NSError?,result:AnyObject?) -> () in 
@@ -19,10 +19,6 @@ HttpEngine(url:"http://example.json").fly(.POST,headerArgs: ["key":"value"],body
 Yeah,it's so simple.
 
 ## SuperDataSerice
-
-It's a business layer service for the ViewController which need the data from the server, it also call the http engine to get data,so why call it super ?
-Because it supply the single line fetch data way. In this way the architeture is pure, the next you will develop only the request args and result parser,
-you could't care the how the way of get data from server.  ...... it's simple.
 
 It's a business layer service for the ViewController which need the data from the server, it also call the http engine to get data,so why call it super ?
 Because it supply the single line fetch data way. In this way, the architeture is pure, the next you will develop only the request args and result parser,
