@@ -3,18 +3,6 @@
 import UIKit
 
 println("sdf")
-println("test---------")
-println("test---------")
-println("test---------")
-println("test---------")
-println("test---------")
-println("test---------")
-println("test---------")
-
-println("test---------")
-println("test---------")
-println("test---------")
-println("test---------")
 
 var e = "sdfs"
 
@@ -99,6 +87,10 @@ class Binding
             
             var viewPropretyName = viewProperty.propertyName;
             var viewPropertyIndex = 0
+            
+            
+            //TODO 这个地方应该用Object-c 的反射机制
+            var view:UIView = viewPropertyNotifyer.view
             for var i=0; i < reflect(viewPropertyNotifyer.view).count; ++i {
                 
                 var str = reflect(viewPropertyNotifyer.view)[i].0 + "----" + reflect(viewPropertyNotifyer.view)[i].1.summary
@@ -109,6 +101,7 @@ class Binding
                     break
                 }
             }
+            println("come out")
             
 //            var view = viewPropertyNotifyer.view
 //            reflect(viewPropertyNotifyer)[viewPropertyIndex].1.value = propertyValue
