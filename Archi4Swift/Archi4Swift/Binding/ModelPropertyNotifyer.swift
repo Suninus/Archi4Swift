@@ -26,7 +26,12 @@ class ModelPropertyNotifyer
     }
     
     func onPropertyChanged(property:ModelProperty) {
-        propertyChanged(self,property)
+        weak var weakSelf = self
+        propertyChanged(weakSelf!,property)
+    }
+    
+    func setValueOfProperty(value: Any!, _ propertyName: NSString) {
+        
     }
 }
 

@@ -2,9 +2,7 @@
 
 import UIKit
 
-println("sdf")
-
-var e = "sdfs"
+var begin = "---------------------------------------------"
 
 class ModelProperty
 {
@@ -24,7 +22,12 @@ class ModelPropertyNotifyer
     }
     
     func onPropertyChanged(property:ModelProperty) {
-        propertyChanged(self,property)
+        weak var weakSelf = self
+        propertyChanged(weakSelf!,property)
+    }
+    
+    func setValueOfProperty(value: Any!, _ propertyName: NSString) {
+        
     }
 }
 
@@ -35,7 +38,7 @@ class ModelPropertyListener
 
 class ViewProperty
 {
-    var propertyName:String? = nil
+    var propertyName:String!
     init(_ pName:NSString) {
         self.propertyName = pName
     }
@@ -43,16 +46,16 @@ class ViewProperty
 
 class ViewPropertyNotifyer
 {
-    var view:UIView!
-    var DPChanged:(UIView,ViewProperty) ->() = {  _ ,_  in }
-    
-    init(view:UIView) {
-        self.view = view
-    }
+    var DPChanged:(ViewPropertyNotifyer,ViewProperty) ->() = {  _ ,_  in }
     
     func onPropertyChanged(property:ViewProperty) {
         var dpChanged = self.DPChanged;
-        dpChanged(self.view,property)
+        weak var weakSelf = self
+        dpChanged(weakSelf!,property)
+    }
+    
+    func setValueOfProperty(value: Any!, _ propertyName: NSString) {
+        
     }
 }
 
@@ -63,15 +66,14 @@ class ViewPropertyListener
 
 class Binding
 {
-    func bind(viewPropertyNotifyer:ViewPropertyNotifyer,viewProperty:ViewProperty,modelPropertyNotifyer:ModelPropertyNotifyer,modelProperty:ModelProperty) {
-        
-        var propertyValue:Any = nil
-        
+    func bind(viewPropertyNotifyer:ViewPropertyNotifyer,_ viewProperty:ViewProperty,_ modelPropertyNotifyer:ModelPropertyNotifyer,_ modelProperty:ModelProperty) {
+    
         modelPropertyNotifyer.propertyChanged = { notifyer,property in
             
+
             var modelPropertyName = property.propertyName
-            
             var modelPropertyIndex = 0
+            var modelPropertyValue:Any = nil
             
             for var i=0; i < reflect(notifyer).count; ++i {
                 
@@ -83,47 +85,66 @@ class Binding
                     break
                 }
             }
-            propertyValue = reflect(notifyer)[modelPropertyIndex].1.value
+            modelPropertyValue = reflect(notifyer)[modelPropertyIndex].1.value
             
-            var viewPropretyName = viewProperty.propertyName;
+            var viewPropertyName = viewProperty.propertyName;
+            viewPropertyNotifyer.setValueOfProperty(modelPropertyValue,viewPropertyName)
+        }
+        
+
+        viewPropertyNotifyer.DPChanged = { notifyer,property in
+            
+            var viewPropertyName = property.propertyName
             var viewPropertyIndex = 0
+            var viewPropertyValue:Any = nil
             
-            
-            //TODO 这个地方应该用Object-c 的反射机制
-            var view:UIView = viewPropertyNotifyer.view
-            for var i=0; i < reflect(viewPropertyNotifyer.view).count; ++i {
+            for var i=0; i < reflect(viewPropertyNotifyer).count; ++i {
                 
-                var str = reflect(viewPropertyNotifyer.view)[i].0 + "----" + reflect(viewPropertyNotifyer.view)[i].1.summary
+                var str = reflect(viewPropertyNotifyer)[i].0 + "----" + reflect(viewPropertyNotifyer)[i].1.summary
                 println("view reflect str --- \(str)")
                 
-                if(viewPropretyName == reflect(viewPropertyNotifyer.view)[i].0) {
+                if(viewPropertyName == reflect(viewPropertyNotifyer)[i].0) {
                     viewPropertyIndex = i
                     break
                 }
             }
-            println("come out")
+            viewPropertyValue = reflect(notifyer)[viewPropertyIndex].1.value
             
-//            var view = viewPropertyNotifyer.view
-//            reflect(viewPropertyNotifyer)[viewPropertyIndex].1.value = propertyValue
+            var modelPropertyName = modelProperty.propertyName
+            modelPropertyNotifyer.setValueOfProperty(viewPropertyValue, modelPropertyName)
         }
     }
     
 }
 
-class BindableUILabel : UILabel
+class BindableUILabel : ViewPropertyNotifyer
 {
-    var viewPropertyNotifyer:ViewPropertyNotifyer!
+    var view:UILabel!
     
-    override var text:String! {
+    var text:String! {
         willSet {
-            viewPropertyNotifyer.onPropertyChanged(ViewProperty("text"))
+            self.view.text = newValue
+        }
+        didSet {
+            self.onPropertyChanged(ViewProperty("text"))
         }
     }
     
-    init(frame: CGRect) {
-        super.init(frame:frame)
-        self.viewPropertyNotifyer = ViewPropertyNotifyer(view:self)
+    init(view:UILabel) {
+        self.view = view
     }
+    
+    override func setValueOfProperty(value: Any!, _ propertyName: NSString) {
+        
+        switch propertyName {
+            case "text" :
+                println("come in set property")
+                self.view.text = value as String
+            default:
+                println("not implement the set value of propertyname:\(propertyName)")
+        }
+    }
+
 }
 
 class User : ModelPropertyNotifyer
@@ -141,15 +162,29 @@ class User : ModelPropertyNotifyer
     init() {
         
     }
+    
+    override func setValueOfProperty(value: Any!, _ propertyName: NSString) {
+        switch propertyName {
+            case "name" :
+                self.name = value as String
+            default:
+                break;
+        }
+    }
 }
 
 var user = User()
-var userLB = BindableUILabel(frame:CGRectZero)
+var userLB = UILabel(frame:CGRectZero)
+var userBindLB = BindableUILabel(view:userLB)
 var binding = Binding()
 
-binding.bind(userLB.viewPropertyNotifyer, viewProperty: ViewProperty("text"), modelPropertyNotifyer: user, modelProperty: ModelProperty("name"))
+binding.bind(userBindLB, ViewProperty("text"), user, ModelProperty("name"))
 user.name = "sunyanfei"
+userBindLB.view.text
 
-println("2fsdfsdfs")
+userBindLB.text = "123456"
+user.name
+
+var end = "---------------------------------------------"
 
 

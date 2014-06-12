@@ -11,24 +11,24 @@ import UIKit
 
 class ViewProperty
 {
-    var pName:String? = nil
+    var propertyName:String!
     init(_ pName:NSString) {
-        self.pName = pName
+        self.propertyName = pName
     }
 }
 
 class ViewPropertyNotifyer
 {
-    var view:UIView!
-    var DPChanged:(UIView,ViewProperty) ->() = {  _ ,_  in }
-    
-    init(view:UIView) {
-        self.view = view
-    }
+    var DPChanged:(ViewPropertyNotifyer,ViewProperty) ->() = {  _ ,_  in }
     
     func onPropertyChanged(property:ViewProperty) {
         var dpChanged = self.DPChanged;
-        dpChanged(self.view,property)
+        weak var weakSelf = self
+        dpChanged(weakSelf!,property)
+    }
+    
+    func setValueOfProperty(value: Any!, _ propertyName: NSString) {
+        
     }
 }
 
@@ -36,4 +36,3 @@ class ViewPropertyListener
 {
     
 }
-

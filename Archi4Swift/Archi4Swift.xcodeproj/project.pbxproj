@@ -10,6 +10,7 @@
 		DB0B8CB51941DE3800341573 /* HttpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB21941DE3800341573 /* HttpOperation.swift */; };
 		DB0B8CB61941DE3800341573 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB31941DE3800341573 /* Operation.swift */; };
 		DB0B8CB71941DE3800341573 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB41941DE3800341573 /* OperationQueue.swift */; };
+		DB2889A9194937C100E1EB57 /* ReflectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2889A8194937C100E1EB57 /* ReflectHelper.m */; };
 		DB50038919481C350042E835 /* BindTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50038819481C350042E835 /* BindTestViewController.swift */; };
 		DBBB647A1941D83D00579464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB64791941D83D00579464 /* AppDelegate.swift */; };
 		DBBFE1FE1948123400E4AB62 /* ModelPropertyNotifyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBFE1FD1948123400E4AB62 /* ModelPropertyNotifyer.swift */; };
@@ -55,6 +56,9 @@
 		DB0B8CB21941DE3800341573 /* HttpOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpOperation.swift; sourceTree = "<group>"; };
 		DB0B8CB31941DE3800341573 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		DB0B8CB41941DE3800341573 /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		DB2889A7194937C100E1EB57 /* Archi4Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Archi4Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB2889A8194937C100E1EB57 /* ReflectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectHelper.m; sourceTree = "<group>"; };
+		DB2889AA1949388000E1EB57 /* ReflectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectHelper.h; sourceTree = "<group>"; };
 		DB50038819481C350042E835 /* BindTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindTestViewController.swift; sourceTree = "<group>"; };
 		DBBB64791941D83D00579464 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBBFE1FD1948123400E4AB62 /* ModelPropertyNotifyer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPropertyNotifyer.swift; sourceTree = "<group>"; };
@@ -135,6 +139,9 @@
 			children = (
 				DBC58DB01942A78D009D970E /* ErrorSystemManager.swift */,
 				DBC58DB21942A7F9009D970E /* Error.swift */,
+				DB2889AA1949388000E1EB57 /* ReflectHelper.h */,
+				DB2889A8194937C100E1EB57 /* ReflectHelper.m */,
+				DB2889A7194937C100E1EB57 /* Archi4Swift-Bridging-Header.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -365,6 +372,7 @@
 				DBCBA8281941C67500A2C630 /* RootTabViewController.swift in Sources */,
 				DBCBA81E1941C67500A2C630 /* WeatherInfo.swift in Sources */,
 				DBC58DB31942A7F9009D970E /* Error.swift in Sources */,
+				DB2889A9194937C100E1EB57 /* ReflectHelper.m in Sources */,
 				DBCBA8291941C67500A2C630 /* RootViewController.swift in Sources */,
 				DB0B8CB61941DE3800341573 /* Operation.swift in Sources */,
 				DB50038919481C350042E835 /* BindTestViewController.swift in Sources */,
@@ -495,9 +503,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Archi4Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Archi4Swift/Tools/Archi4Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -506,9 +517,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Archi4Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Archi4Swift/Tools/Archi4Swift-Bridging-Header.h";
 			};
 			name = Release;
 		};

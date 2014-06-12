@@ -9,18 +9,47 @@
 import Foundation
 import UIKit
 
-class BindableUILabel : UILabel
+class BindableUILabel : ViewPropertyNotifyer
 {
-    var viewPropertyNotifyer:ViewPropertyNotifyer!
+    var view:UILabel!
     
-    override var text:String! {
+    var text:String! {
         willSet {
-            viewPropertyNotifyer.onPropertyChanged(ViewProperty("text"))
+            self.view.text = newValue
+        }
+        didSet {
+            self.onPropertyChanged(ViewProperty("text"))
         }
     }
     
-    init(frame: CGRect) {
-        super.init(frame:frame)
-        self.viewPropertyNotifyer = ViewPropertyNotifyer(view:self)
+    init(view:UILabel) {
+        self.view = view
     }
+    
+    override func setValueOfProperty(value: Any!, _ propertyName: NSString) {
+        
+        switch propertyName {
+        case "text" :
+            println("come in set property")
+            self.view.text = value as String
+        default:
+            println("not implement the set value of propertyname:\(propertyName)")
+        }
+    }
+}
+
+class BindableUITable : ViewPropertyNotifyer
+{
+    var view:UITableView!
+    
+    var items:Array<AnyObject>!
+    
+    init(view:UITableView) {
+        self.view = view
+    }
+}
+
+class BindableTextField : ViewPropertyNotifyer
+{
+    
 }

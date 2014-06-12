@@ -11,16 +11,25 @@ import Foundation
 class User : ModelPropertyNotifyer
 {
     var name:String! {
-        willSet {
-            self.onPropertyChanged(ModelProperty("name"))
-        }
-        didSet {
-            
-        }
+    willSet {
+        
+    }
+    didSet {
+        println("set name ----")
+        self.onPropertyChanged(ModelProperty("name"))
+    }
     }
     
     init() {
         
     }
     
+    override func setValueOfProperty(value: Any!, _ propertyName: NSString) {
+        switch propertyName {
+        case "name" :
+            self.name = value as String
+        default:
+            break;
+        }
+    }
 }

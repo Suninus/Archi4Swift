@@ -11,23 +11,52 @@ import UIKit
 
 class Binding
 {
-    func bind(vpn:UIView,vp:Any,mpn:ModelPropertyNotifyer,mp:ModelProperty) {
+    func bind(viewPropertyNotifyer:ViewPropertyNotifyer,_ viewProperty:ViewProperty,_ modelPropertyNotifyer:ModelPropertyNotifyer,_ modelProperty:ModelProperty) {
         
-        mpn.propertyChanged = { notifyer,property in
-            var name = property.propertyName
+        modelPropertyNotifyer.propertyChanged = { notifyer,property in
             
-            var index = 0
+            
+            var modelPropertyName = property.propertyName
+            var modelPropertyIndex = 0
+            var modelPropertyValue:Any = nil
             
             for var i=0; i < reflect(notifyer).count; ++i {
                 
                 var str = reflect(notifyer)[i].0 + "----" + reflect(notifyer)[i].1.summary
+                println("model reflect str --- \(str)")
                 
-                if (name == reflect(notifyer)[i].0) {
-                    index = i
+                if (modelPropertyName == reflect(notifyer)[i].0) {
+                    modelPropertyIndex = i
                     break
                 }
             }
-            var propertyValue = reflect(notifyer)[index].1.summary
+            modelPropertyValue = reflect(notifyer)[modelPropertyIndex].1.value
+            
+            var viewPropertyName = viewProperty.propertyName;
+            viewPropertyNotifyer.setValueOfProperty(modelPropertyValue,viewPropertyName)
+        }
+        
+        
+        viewPropertyNotifyer.DPChanged = { notifyer,property in
+            
+            var viewPropertyName = property.propertyName
+            var viewPropertyIndex = 0
+            var viewPropertyValue:Any = nil
+            
+            for var i=0; i < reflect(viewPropertyNotifyer).count; ++i {
+                
+                var str = reflect(viewPropertyNotifyer)[i].0 + "----" + reflect(viewPropertyNotifyer)[i].1.summary
+                println("view reflect str --- \(str)")
+                
+                if(viewPropertyName == reflect(viewPropertyNotifyer)[i].0) {
+                    viewPropertyIndex = i
+                    break
+                }
+            }
+            viewPropertyValue = reflect(notifyer)[viewPropertyIndex].1.value
+            
+            var modelPropertyName = modelProperty.propertyName
+            modelPropertyNotifyer.setValueOfProperty(viewPropertyValue, modelPropertyName)
         }
     }
     
