@@ -47,10 +47,11 @@ SuperDataService()
 - Any issue is appreciated.
 
 ## Next
-- 1.complete the architecture to the swift grammar
-- 2.swift operation queue
-- 3.errorsystem
-- 4.write a project use this architecture
+- 1.Complete the architecture to the swift grammar
+- 2.Binding
+- 2.Swift operation queue
+- 3.Errorsystem
+- 4.Write a project use this architecture
 
 ## License
 MIT
