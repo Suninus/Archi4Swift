@@ -44,7 +44,7 @@ class ViewProperty
     }
 }
 
-class ViewPropertyNotifyer
+class ViewPropertyNotifyer : NSObject
 {
     var DPChanged:(ViewPropertyNotifyer,ViewProperty) ->() = {  _ ,_  in }
     
@@ -131,7 +131,17 @@ class BindableUILabel : ViewPropertyNotifyer
     }
     
     init(view:UILabel) {
+        
+        super.init()
         self.view = view
+        
+        println("init---")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didChanged:"), name: UITextFieldTextDidChangeNotification, object: view)
+
+    }
+    
+    func didChanged(notification:NSNotification) {
+        println("observeValueForKeyPath\(notification.object)")
     }
     
     override func setValueOfProperty(value: Any!, _ propertyName: NSString) {
@@ -182,7 +192,8 @@ binding.bind(userBindLB, ViewProperty("text"), user, ModelProperty("name"))
 user.name = "sunyanfei"
 userBindLB.view.text
 
-userBindLB.text = "123456"
+userLB.text = "123"
+userBindLB.view.text = "123456"
 user.name
 
 var end = "---------------------------------------------"
