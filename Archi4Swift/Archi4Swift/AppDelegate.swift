@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
 //        self.window!.rootViewController = RootTabViewController()
-        self.window!.rootViewController = BindTestViewController()
+//        self.window!.rootViewController = BindTestViewController()
+        self.window!.rootViewController = JsonParseViewController()
+        
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         return true

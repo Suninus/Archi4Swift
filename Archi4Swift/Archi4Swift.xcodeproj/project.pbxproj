@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		806C9EE3194D92C000F0F4DE /* JsonParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C9EE2194D92C000F0F4DE /* JsonParseViewController.swift */; };
+		80921B13194D2C4800FC7B89 /* SwiftJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80921B12194D2C4800FC7B89 /* SwiftJson.swift */; };
 		DB0B8CB51941DE3800341573 /* HttpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB21941DE3800341573 /* HttpOperation.swift */; };
 		DB0B8CB61941DE3800341573 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB31941DE3800341573 /* Operation.swift */; };
 		DB0B8CB71941DE3800341573 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8CB41941DE3800341573 /* OperationQueue.swift */; };
@@ -52,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		806C9EE2194D92C000F0F4DE /* JsonParseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParseViewController.swift; sourceTree = "<group>"; };
+		806C9EE4194DBEA200F0F4DE /* jsontest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = jsontest.playground; sourceTree = "<group>"; };
+		80921B12194D2C4800FC7B89 /* SwiftJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJson.swift; sourceTree = "<group>"; };
 		DB02F6711942A136002B8E5A /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; };
 		DB0B8CB21941DE3800341573 /* HttpOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpOperation.swift; sourceTree = "<group>"; };
 		DB0B8CB31941DE3800341573 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
@@ -142,6 +147,7 @@
 				DB2889AA1949388000E1EB57 /* ReflectHelper.h */,
 				DB2889A8194937C100E1EB57 /* ReflectHelper.m */,
 				DB2889A7194937C100E1EB57 /* Archi4Swift-Bridging-Header.h */,
+				80921B12194D2C4800FC7B89 /* SwiftJson.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 				DB02F6711942A136002B8E5A /* test.playground */,
 				DBC58DB71942C800009D970E /* binding.playground */,
 				DBC58DB81942DB35009D970E /* properties.playground */,
+				806C9EE4194DBEA200F0F4DE /* jsontest.playground */,
 				DBCBA80F1941C67500A2C630 /* ViewControllers */,
 				DBCBA8011941C67500A2C630 /* Cells */,
 				DB7BB5811945D3110044D253 /* Binding */,
@@ -268,6 +275,7 @@
 				DBCBA8171941C67500A2C630 /* RootViewController.swift */,
 				DBCBA8181941C67500A2C630 /* SuggViewController.swift */,
 				DB50038819481C350042E835 /* BindTestViewController.swift */,
+				806C9EE2194D92C000F0F4DE /* JsonParseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -377,6 +385,7 @@
 				DB0B8CB61941DE3800341573 /* Operation.swift in Sources */,
 				DB50038919481C350042E835 /* BindTestViewController.swift in Sources */,
 				DBCBA81A1941C67500A2C630 /* WeatherParamArgs.swift in Sources */,
+				80921B13194D2C4800FC7B89 /* SwiftJson.swift in Sources */,
 				DBBFE1FE1948123400E4AB62 /* ModelPropertyNotifyer.swift in Sources */,
 				DBC58DB11942A78D009D970E /* ErrorSystemManager.swift in Sources */,
 				DBCBA8191941C67500A2C630 /* ParamArgs.swift in Sources */,
@@ -390,6 +399,7 @@
 				DBBFE2021948124F00E4AB62 /* ViewExt.swift in Sources */,
 				DBCBA8261941C67500A2C630 /* HomeViewController.swift in Sources */,
 				DBCBA81D1941C67500A2C630 /* SuperDataService.swift in Sources */,
+				806C9EE3194D92C000F0F4DE /* JsonParseViewController.swift in Sources */,
 				DBBFE204194812BD00E4AB62 /* User.swift in Sources */,
 				DBCBA8231941C67500A2C630 /* BaseViewController.swift in Sources */,
 				DBBFE206194813E500E4AB62 /* Binding.swift in Sources */,
